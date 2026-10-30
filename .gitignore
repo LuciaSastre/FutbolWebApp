@@ -1,0 +1,44 @@
+
+# Clave privada de cifrado
+AppSrc/LoginEncryptionKey.inc
+
+# Credenciales de MySQL
+Data/DfConnId.ini
+
+# Archivos temporales de DataFlex
+*.lock
+*.dfr
+*.prn
+*.err
+
+# Archivos temporales del sistema
+Thumbs.db
+.DS_Store
+
+# Configuracion local
+Programs/Config.ws
+
+
+# Archivos generados al compilar
+*.exe
+*.dbg
+*.dep
+*.log
+*.cch
+*.dfcache.json
+
+# Datos locales y archivos temporales
+*.dat
+*.hdr
+*.k1
+*.k2
+*.k3
+
+# Paquetes instalados de DataFlex
+DfPkg/
+
+# Archivos locales del entorno de desarrollo
+IdeSrc/Workspace.loc
+
+# Archivos generados de compilacion
+*.manifest
