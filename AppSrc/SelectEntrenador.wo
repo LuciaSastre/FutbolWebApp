@@ -164,7 +164,7 @@ Object oSelectEntrenador is a cWebView
             Case (NavigateData.eNavigateType = nfFromParent)
                 // If from parent, this is a constrained drill down
                 // If Row select does main-zoom we don't need this
-                WebSet pbRender of oDetailButton to False
+                WebSet pbRender of oDetailButton to 0
                 Case Break
 
             Case (NavigateData.eNavigateType = nfFromChild)
@@ -173,13 +173,13 @@ Object oSelectEntrenador is a cWebView
 
             Case (NavigateData.eNavigateType = nfFromMain)
                 // If from main, this is a probably a main-file lookup from a Zoom
-                WebSet pbRender of oDetailButton to False
+                WebSet pbRender of oDetailButton to 0
                 Case Break
 
-            Case Else // must be nfUndefined
+                Case Else // must be nfUndefined
                 // This may be the start of a drilldown query or this may be used for some kind of custom query.
                 // If Row select does main-zoom we don't need this
-                WebSet pbRender of oDetailButton to False
+                WebSet pbRender of oDetailButton to 0
 
         Case End
 
