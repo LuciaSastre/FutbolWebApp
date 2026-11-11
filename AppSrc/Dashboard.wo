@@ -1,115 +1,137 @@
 ﻿
 Use cWebView.pkg
 Use cWebPanel.pkg
-Use cWebForm.pkg
-Use cWebButton.pkg
-Use cWebGroup.pkg
-Use cWebSpacer.pkg
 Use cWebHtmlBox.pkg
-Use cWebMenuGroup.pkg
-Use cWebMenuItem.pkg
-Use cWebLabel.pkg
-Use cWebList.pkg
-Use cWebColumn.pkg
+Use cWebGroup.pkg
+
+// FUTBOLWEBAPP - DASHBOARD
+// Diseño minimalista blanco y verde
+// Sprint 2 - Navegacion
 
 Object oDashboard is a cWebView
 
     Set piMaxWidth to 1024
-
     Set psCaption to "Dashboard"
     Set peViewType to vtUndefined
     Set pbShowCaption to False
     Set psCSSClass to "Dashboard"
 
     Object oWebMainPanel is a cWebPanel
-        Set piColumnCount to 24
 
-        WebSetResponsive piColumnCount rmMobile to 1
-        WebSetResponsive piColumnCount rmTabletPortrait to 16
+        Set piColumnCount to 12
 
-        Object oTiles_grp is a cWebGroup
-            Set piColumnSpan to 8
+        // FILA 1: ENTRENADORES Y JUGADORES
+
+        Object oFila1 is a cWebGroup
+
+            Set piColumnSpan to 12
+            Set piColumnCount to 12
             Set pbShowBorder to False
             Set pbShowCaption to False
-            Set piColumnCount to 12
+            Set psCSSClass to "DashboardRow"
 
-            Set psCSSClass to "TilesGroup"
-
-            // TARJETA 1: ENTRENADORES
             Object oWelcomeTile is a cWebHtmlBox
+
                 Set pbServerOnClick to True
                 Set piColumnSpan to 6
-                Set psCSSClass to "Tile Light"
-
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Entrenadores</div><div class="Tile_Subtitle"></div></div>'
+                Set psCSSClass to "Tile Light TileEntrenadores"
+                
+                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Entrenadores</div></div>'
 
                 WebRegisterPath ntNavigateForwardCustom oSelectEntrenador
 
                 Procedure OnClick String sId String sParam
                     Send NavigatePath
                 End_Procedure
+
             End_Object
 
-            // TARJETA 2: JUGADORES
             Object oTile2 is a cWebHtmlBox
+
                 Set pbServerOnClick to True
                 Set piColumnSpan to 6
-                Set piColumnIndex to 6
                 Set psCSSClass to "Tile LightAlternate"
 
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Jugadores</div><div class="Tile_Subtitle"></div></div>'
+                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Jugadores</div></div>'
 
                 WebRegisterPath ntNavigateForwardCustom oSelectJugador
 
                 Procedure OnClick String sId String sParam
                     Send NavigatePath
                 End_Procedure
+
             End_Object
 
-            // TARJETA 3: EQUIPOS
+        End_Object
+
+        // FILA 2: EQUIPOS Y LIGAS
+
+        Object oFila2 is a cWebGroup
+
+            Set piColumnSpan to 12
+            Set piColumnCount to 12
+            Set pbShowBorder to False
+            Set pbShowCaption to False
+            Set psCSSClass to "DashboardRow"
+
             Object oTile3 is a cWebHtmlBox
+
                 Set pbServerOnClick to True
                 Set piColumnSpan to 6
                 Set psCSSClass to "Tile Dark"
 
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Equipos</div><div class="Tile_Subtitle"></div></div>'
+                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Equipos</div></div>'
 
                 WebRegisterPath ntNavigateForwardCustom oSelectEquipo
 
                 Procedure OnClick String sId String sParam
                     Send NavigatePath
                 End_Procedure
+
             End_Object
 
-            // TARJETA 4: LIGAS
             Object oTile4 is a cWebHtmlBox
+
                 Set pbServerOnClick to True
                 Set piColumnSpan to 6
-                Set piColumnIndex to 6
                 Set psCSSClass to "Tile DarkAlternate"
 
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Ligas</div><div class="Tile_Subtitle"></div></div>'
+                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Ligas</div></div>'
 
                 WebRegisterPath ntNavigateForwardCustom oSelectLiga
 
                 Procedure OnClick String sId String sParam
                     Send NavigatePath
                 End_Procedure
+
             End_Object
 
-            // TARJETA 5: POSICIONES
-            Object oTile5 is a cWebHtmlBox
-                Set pbServerOnClick to True
-                Set piColumnSpan to 6
-                Set psCSSClass to "Tile Light"
+        End_Object
 
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Posiciones</div><div class="Tile_Subtitle"></div></div>'
+        // FILA 3: POSICIONES
+
+        Object oFila3 is a cWebGroup
+
+            Set piColumnSpan to 12
+            Set piColumnCount to 12
+            Set pbShowBorder to False
+            Set pbShowCaption to False
+            Set psCSSClass to "DashboardRow"
+
+            Object oTile5 is a cWebHtmlBox
+
+                Set pbServerOnClick to True
+                Set piColumnSpan to 12
+                Set psCSSClass to "Tile Light TilePosiciones"
+
+                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Posiciones</div></div>'
 
                 WebRegisterPath ntNavigateForwardCustom oSelectPosicion
 
                 Procedure OnClick String sId String sParam
                     Send NavigatePath
                 End_Procedure
+
             End_Object
 
         End_Object

@@ -1,0 +1,166 @@
+
+/* ==========================================
+   FUTBOLWEBAPP
+   Diseño minimalista blanco y verde
+   ========================================== */
+
+/* COLORES PRINCIPALES */
+
+:root {
+    --df-MainDark: #176B45;
+    --df-MainRegular: #176B45;
+    --df-MainMedium: #176B45;
+    --df-MainLight: #176B45;
+    --df-MainLight2: #CDE9DA;
+    --df-MainLight3: #E5F3EB;
+    --df-MainLight4: #F5F8F5;
+}
+
+/* ==========================================
+   ENCABEZADO VERDE
+   ========================================== */
+
+.WebHeader,
+.WebApp .WebHeader,
+.WebCommandBar,
+.WebApp .WebCommandBar,
+.WebHeader .WebCon_Inner,
+.WebHeader .WebCon_Sizer,
+.WebCommandBar .WebCmd_ToolBar {
+    background-color: #176B45 !important;
+}
+
+.WebBreadcrumb,
+.WebCrumbs,
+.WebCrumb,
+.WebBreadcrumbs,
+.WebApp .WebBreadcrumb,
+.WebApp .WebCrumbs,
+.WebApp .WebCrumb,
+.WebApp .WebBreadcrumbs {
+    background-color: #176B45 !important;
+}
+
+.WebMenuButton,
+.WebHamburger,
+.WebHamburgerMenu,
+.WebMenuButton button,
+.WebApp .WebMenuButton,
+.WebApp .WebHamburger,
+.WebApp .WebHamburgerMenu {
+    background-color: #176B45 !important;
+}
+
+.WebHeader,
+.WebHeader *,
+.WebCommandBar,
+.WebCommandBar *,
+.WebBreadcrumb,
+.WebBreadcrumb *,
+.WebCrumbs,
+.WebCrumbs *,
+.WebMenuButton *,
+.WebHamburger * {
+    color: #FFFFFF !important;
+}
+
+/* ==========================================
+   FONDO DEL DASHBOARD
+   ========================================== */
+
+.Dashboard {
+    background-color: #F5F8F5;
+}
+
+/* ==========================================
+   GRUPOS DE FILAS
+   ========================================== */
+
+.Dashboard .DashboardRow {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* ==========================================
+   TARJETAS
+   ========================================== */
+
+.Dashboard .Tile {
+    background: #FFFFFF !important;
+    border: 1px solid #E0EAE2 !important;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* CONTENIDO DE LAS TARJETAS */
+
+.Dashboard .Tile .WebCon_Sizer {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 110px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+/* TITULOS */
+
+.Dashboard .Tile .Tile_Title {
+    color: #176B45 !important;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+/* EFECTO AL PASAR EL RATON */
+
+.Dashboard .Tile:hover {
+    border-color: #176B45 !important;
+    box-shadow: 0 6px 18px rgba(23, 107, 69, 0.18);
+    transition: 0.2s ease;
+}
+
+/* ==========================================
+   DISTRIBUCION DE LAS TARJETAS
+   ========================================== */
+
+/* Primera y segunda fila:
+   dos tarjetas del mismo tamaño */
+
+.Dashboard .DashboardRow .Tile:not(.TilePosiciones) {
+    width: calc(50% - 12px) !important;
+    margin: 6px !important;
+    float: left !important;
+    clear: none !important;
+}
+
+/* Tercera fila:
+   Posiciones ocupa todo el ancho */
+
+.Dashboard .DashboardRow .TilePosiciones {
+    width: calc(100% - 12px) !important;
+    margin: 6px !important;
+    float: left !important;
+    clear: none !important;
+}
+
+/* CENTRAR TITULOS DE LAS TARJETAS */
+
+.Dashboard .Tile .Tile_Title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center !important;
+}
+
+/* REFERENCIA PARA CENTRAR EL TITULO */
+
+.Dashboard .Tile .WebHtml_Wrp {
+    position: relative;
+}
