@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "DataFlex-dev/Web UI Server#1.0.56"
+    ],
+    "description": "Aplicación web de gestión de fútbol - Sprint 2",
+    "df": 26.0,
+    "projects": [
+        "WebApp.src"
+    ]
+}

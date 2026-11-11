@@ -42,3 +42,16 @@ IdeSrc/Workspace.loc
 
 # Archivos generados de compilacion
 *.manifest
+
+# Archivos locales y temporales del Studio
+IdeSrc/*.dsk
+IdeSrc/*.mtd
+
+# Archivos de depuracion del navegador
+AppHtml/WebUI/df-debug.js.map
+
+
+# Configuracion web de la raiz (plantilla local)
+/web.config
+*.bak
+*.bak
